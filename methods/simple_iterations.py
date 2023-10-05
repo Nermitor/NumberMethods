@@ -1,4 +1,4 @@
-from meta import Resolver, Solution
+from meta.meta import Resolver, Solution
 
 
 class SimpleIterationsSolution(Solution):
