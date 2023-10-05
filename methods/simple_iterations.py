@@ -3,8 +3,7 @@ from meta.meta import Resolver, Solution
 
 class SimpleIterationsSolution(Solution):
     def as_txt(self) -> str:
-        out = []
-        out.append(f'Функция вида f(x) = {self._raw["function"].view}')
+        out = [f'Функция вида f(x) = {self._raw["function"].view}']
         for i, (x0, x1, eps) in enumerate(self._raw['steps']):
             out.append(f'Итерация {i + 1}')
             out.append(f'x{i} = {x0}')
@@ -13,7 +12,6 @@ class SimpleIterationsSolution(Solution):
 
 
 class SimpleIterationsResolver(Resolver):
-
     @staticmethod
     def resolve(f: callable, x0: float, eps: float = 0.000001, n: int = 100) -> SimpleIterationsSolution:
         solution = {

@@ -1,14 +1,17 @@
 from methods.simple_iterations import SimpleIterationsResolver
 from math import sin, pi
 
+from methods.tangent import TangentResolver
+
+
 def sample_func(x):
-    sample_func.view = "2 * sin(x + pi / 6) ** 2 - 1"
+    sample_func.view = "2 * sin(x + pi / 6)**2 - x - 1"
     sample_func.template = sample_func.view.replace('x', '{0}')
     return eval(sample_func.template.format(x))
 
 
 def test():
-    resolve = SimpleIterationsResolver.resolve(sample_func, 1)
+    resolve = TangentResolver.resolve(sample_func, 0, 1)
     print(resolve.as_txt())
 
 
