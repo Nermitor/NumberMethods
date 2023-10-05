@@ -1,7 +1,5 @@
+from methods.simple_iterations import SimpleIterationsResolver
 from math import sin, pi
-
-from simple_iterations import SimpleIterationsResolver
-
 
 def sample_func(x):
     sample_func.view = "2 * sin(x + pi / 6) ** 2 - 1"
